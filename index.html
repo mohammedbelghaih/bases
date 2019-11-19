@@ -4,7 +4,6 @@
 	<title>Bases</title>
 </head>
 <body>
-<form>
 	<table>
 		<tr>
 			<td><label>Decimal :</label></td>
@@ -15,45 +14,41 @@
 		</tr>
 		<tr>
 			<td><label>Binaire :</label></td>
-			<td><input type="text" name="binaire" id="binaire"></td>
+			<td><div id="binaire"></div></td>
 		</tr>
 		<tr>
 			<td><label>Octal :</label></td>
-			<td><input type="text" name="octal" id="octal"></td>
+			<td><div id="octal"></div></td>
 		</tr>
 		<tr>
 			<td><label>Hexadecimal :</label></td>
-			<td><input type="text" name="hexa" id="hexa"></td>
+			<td><div id="hexa"></div></td>
 		</tr>
 		<tr>
 			<td><label>Base 64 :</label></td>
-			<td><input type="text" name="b64" id="b64"></td>
+			<td><div id="b64"></div></td>
 		</tr>
 	</table>
-</form>
 
 <script>
 	function Convertir(){
 		var decimal = document.getElementById("decimal").value;
-		DeciToAny(decimal, 2);
-		DeciToAny(decimal, 8);
-		DeciToAny(decimal, 16);
-		document.getElementById("binaire").value = decimal;
-		document.getElementById("octal").value = decimal;
-		document.getElementById("hexa").value = decimal;
+		document.getElementById("decimal").focus();
+		
+		document.getElementById("binaire").innerHTML = DeciToAny(decimal, 2);
+		document.getElementById("octal").innerHTML = DeciToAny(decimal, 8);
+		document.getElementById("hexa").innerHTML = DeciToAny(decimal, 16);
 	}
 
 	function DeciToAny(decimal, div){
 		var n = decimal;
-		var finalNumber = 0;
-		var power = 0;
+		var finalNumber = "";
+		
 		while(n != 0){
-
-			finalNumber += (n % div) * Math.pow(10, power);
+			finalNumber = ("" + (n % div) <= 9 ? (n % div) : String.fromCharCode(55 + (n % div))) + finalNumber;
 			n = Math.trunc(n / div);
-
-			power++;
 		}
+
 		alert(finalNumber);
 		return finalNumber;
 	}

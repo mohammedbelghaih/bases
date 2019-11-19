@@ -8,7 +8,7 @@
 	<table>
 		<tr>
 			<td><label>Decimal :</label></td>
-			<td><input type="text" name="decimal" id="decimal"></td>
+			<td><input type="number" name="decimal" id="decimal"></td>
 		</tr>
 		<tr>
 			<td colpan="2"><button onclick="Convertir()">Convertir</button></td>
@@ -35,15 +35,27 @@
 <script>
 	function Convertir(){
 		var decimal = document.getElementById("decimal").value;
-		DeciToBin(decimal);
+		DeciToAny(decimal, 2);
+		DeciToAny(decimal, 8);
+		DeciToAny(decimal, 16);
 		document.getElementById("binaire").value = decimal;
 		document.getElementById("octal").value = decimal;
 		document.getElementById("hexa").value = decimal;
 	}
 
-	function DeciToBin(decimal){
-		alert(decimal);
-		return decimal;
+	function DeciToAny(decimal, div){
+		var n = decimal;
+		var finalNumber = 0;
+		var power = 0;
+		while(n != 0){
+
+			finalNumber += (n % div) * Math.pow(10, power);
+			n = Math.trunc(n / div);
+
+			power++;
+		}
+		alert(finalNumber);
+		return finalNumber;
 	}
 </script>
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bases</title>
+</head>
+<body>
+<form>
+	<table>
+		<tr>
+			<td><label>Decimal :</label></td>
+			<td><input type="text" name="decimal" id="decimal"></td>
+		</tr>
+		<tr>
+			<td colpan="2"><button onclick="Convertir()">Convertir</button></td>
+		</tr>
+		<tr>
+			<td><label>Binaire :</label></td>
+			<td><input type="text" name="binaire" id="binaire"></td>
+		</tr>
+		<tr>
+			<td><label>Octal :</label></td>
+			<td><input type="text" name="octal" id="octal"></td>
+		</tr>
+		<tr>
+			<td><label>Hexadecimal :</label></td>
+			<td><input type="text" name="hexa" id="hexa"></td>
+		</tr>
+		<tr>
+			<td><label>Base 64 :</label></td>
+			<td><input type="text" name="b64" id="b64"></td>
+		</tr>
+	</table>
+</form>
+
+<script>
+	function Convertir(){
+		var decimal = document.getElementById("decimal").value;
+		DeciToBin(decimal);
+		document.getElementById("binaire").value = decimal;
+		document.getElementById("octal").value = decimal;
+		document.getElementById("hexa").value = decimal;
+	}
+
+	function DeciToBin(decimal){
+		alert(decimal);
+		return decimal;
+	}
+</script>
+
+</body>
+</html>

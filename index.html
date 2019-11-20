@@ -42,11 +42,11 @@
 		document.getElementById("b62").innerHTML = DeciToAny(decimal, 62);
 	}
 
-	function DeciToAny(decimal, div){
+	function DeciToAny(decimal, base){
 		var n = decimal, finalNumber = "";
 		do{
-			finalNumber = ((n % div) <= 9 ? (n % div) : (n % div <= 35 ? String.fromCharCode(55 + (n % div)) : String.fromCharCode(61 + (n % div)))) + finalNumber;
-			n = Math.trunc(n / div);
+			finalNumber = ((n % base) <= 9 ? (n % base) : (n % base <= 35 ? String.fromCharCode(55 + (n % base)) : String.fromCharCode(61 + (n % base)))) + finalNumber;
+			n = Math.trunc(n / base);
 		} while(n != 0);
 
 		return finalNumber;

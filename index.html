@@ -2,31 +2,32 @@
 <html>
 <head>
 	<title>Bases</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<table>
 		<tr>
 			<td><label>Decimal :</label></td>
-			<td><input onchange="Convertir()" type="number" name="decimal" id="decimal" value="0"></td>
+			<td><input onchange="Convertir()" type="number" name="decimal" id="decimal" value="0"></td>			
 		</tr>
 		<tr>
-			<td colpan="2"><button onclick="Convertir()">Convertir</button></td>
+			<td><button onclick="Convertir()">Convertir</button></td>
 		</tr>
 		<tr>
-			<td><label>Binaire :</label></td>
-			<td><div id="binaire">0</div></td>
+			<td>Binaire :</td>
+			<td colspan="2"><div id="binaire">0</div></td>
 		</tr>
 		<tr>
-			<td><label>Octal :</label></td>
-			<td><div id="octal">0</div></td>
+			<td>Octal :</td>
+			<td colspan="2"><div id="octal">0</div></td>
 		</tr>
 		<tr>
-			<td><label>Hexadecimal :</label></td>
-			<td><div id="hexa">0</div></td>
+			<td>Hexadecimal :</td>
+			<td colspan="2"><div id="hexa">0</div></td>
 		</tr>
 		<tr>
-			<td><label>Base 62 :</label></td>
-			<td><div id="b62">0</div></td>
+			<td>Base 62 :</td>
+			<td colspan="2"><div id="b62">0</div></td>
 		</tr>
 	</table>
 
